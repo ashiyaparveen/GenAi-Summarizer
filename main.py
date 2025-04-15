@@ -100,3 +100,14 @@ if __name__ == "__main__":
     print("\n📄 Original Article (truncated):\n", article[:300] + "...\n")
 
     app.run(debug=True)
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello from GenAI!"
+
+# Only needed if you're running locally
+if __name__ == "__main__":
+    app.run()
