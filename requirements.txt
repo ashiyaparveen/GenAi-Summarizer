@@ -4,5 +4,7 @@ pymongo
 google-generativeai  # or openai if using GPT
 openai
 beautifulsoup4
+python-dotenv
+
 
 
