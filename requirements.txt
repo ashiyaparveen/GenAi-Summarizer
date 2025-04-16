@@ -3,4 +3,7 @@ gunicorn
 pymongo
 google-generativeai  # or openai if using GPT
 openai
+beautifulsoup4
+pinecone_vector_db
+
 
