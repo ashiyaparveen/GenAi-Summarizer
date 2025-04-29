@@ -49,6 +49,7 @@ backend/
 ### 1. Install Dependencies
 ```bash
 cd frontend
+cd frontend
 npm install
 ```
 
@@ -81,7 +82,7 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ### 3. Run the Backend
 ```bash
-flask run
+python main.py
 ```
 
 ### 4. File Highlights
@@ -119,5 +120,5 @@ flask run
 - You can deploy this with services like Vercel (frontend), Render (backend), and MongoDB Atlas.
 
 ---
-Built with ❤️ by Ashiya Parveen R
+ by Ashiya Parveen R
 
