@@ -3,6 +3,7 @@ from agents.summarizer_agent import summarize_content, get_summary_history
 from memory.vector_memory import fetch_user_preferences
 from tools.real_time_web import fetch_article_summary
 from config import pinecone_vector_db
+
 from pymongo import MongoClient
 from datetime import datetime
 from flask_cors import CORS
@@ -96,18 +97,13 @@ if __name__ == "__main__":
     preferences = fetch_user_preferences(user_id, pinecone_vector_db)
     summary = summarize_content(user_id, article, preferences)
 
-    print("\n🧠 Tailored Summary:\n", summary)
-    print("\n📄 Original Article (truncated):\n", article[:300] + "...\n")
+    print("\n Tailored Summary:\n", summary)
+    print("\n Original Article (truncated):\n", article[:300] + "...\n")
 
-    app.run(debug=True)
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "Hello from GenAI!"
-
-# Only needed if you're running locally
-if __name__ == "__main__":
-    app.run()
+if  __name__ == "__main__":
+    app.run(debug=True, port=5000)
+try:
+    summary = summarize_content(user_id, article, preferences)
+except Exception as e:
+    print("Error during summarization:", e)
+    summary = "Sorry, summarization failed due to API limit. Please try later."
